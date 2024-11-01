@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6351071009_LTWEB_K63", "6351071009_LTWEB_K63\6351071009_LTWEB_K63.csproj", "{A05897C8-13E8-4A90-BBA6-1386352D3157}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcBookStore", "6351071009_LTWEB_K63\MvcBookStore.csproj", "{A05897C8-13E8-4A90-BBA6-1386352D3157}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

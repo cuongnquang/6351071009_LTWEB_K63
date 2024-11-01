@@ -43,7 +43,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -88,19 +94,97 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\templatemo_style.css" />
+    <Content Include="Content\images\templatemo_ads.jpg" />
+    <Content Include="Content\images\templatemo_bg.jpg" />
+    <Content Include="Content\images\templatemo_btn_01.jpg" />
+    <Content Include="Content\images\templatemo_btn_02.jpg" />
+    <Content Include="Content\images\templatemo_footer_bg.jpg" />
+    <Content Include="Content\images\templatemo_h1_bg.jpg" />
+    <Content Include="Content\images\templatemo_header_bg.jpg" />
+    <Content Include="Content\images\templatemo_header_bg_blank.jpg" />
+    <Content Include="Content\images\templatemo_image_01.jpg" />
+    <Content Include="Content\images\templatemo_image_02.jpg" />
+    <Content Include="Content\images\templatemo_image_03.jpg" />
+    <Content Include="Content\images\templatemo_image_04.jpg" />
+    <Content Include="Content\images\templatemo_menu_bg.jpg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\QLBansach.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLBansach.edmx</DependentUpon>
+      <LastGenOutput>QLBansach.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\QLBansach.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLBansach.edmx</DependentUpon>
+      <LastGenOutput>QLBansach.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BookStoreController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CHITIETDONDATHANG.cs">
+      <DependentUpon>QLBansach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CHUDE.cs">
+      <DependentUpon>QLBansach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DONDATHANG.cs">
+      <DependentUpon>QLBansach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KHACHHANG.cs">
+      <DependentUpon>QLBansach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NHAXUATBAN.cs">
+      <DependentUpon>QLBansach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QLBansach.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBansach.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QLBansach.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBansach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QLBansach.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBansach.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SACH.cs">
+      <DependentUpon>QLBansach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TACGIA.cs">
+      <DependentUpon>QLBansach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VIETSACH.cs">
+      <DependentUpon>QLBansach.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <EntityDeploy Include="Models\QLBansach.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLBansach.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\QLBansach.edmx.diagram">
+      <DependentUpon>QLBansach.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
+    <Content Include="Views\Shared\_LayoutHomePage.cshtml" />
+    <Content Include="Views\BookStore\Index.cshtml" />
+    <Content Include="Views\BookStore\ChuDe.cshtml" />
+    <Content Include="Views\BookStore\NhaXuatBan.cshtml" />
+    <Content Include="Views\BookStore\SPTheochude.cshtml" />
+    <Content Include="Views\BookStore\SPTheoNXB.cshtml" />
+    <Content Include="Views\BookStore\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -110,8 +194,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+    <Folder Include="fonts\" />
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
