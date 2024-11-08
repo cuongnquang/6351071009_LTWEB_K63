@@ -47,7 +47,14 @@
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -109,73 +116,76 @@
     <Content Include="Content\images\templatemo_image_04.jpg" />
     <Content Include="Content\images\templatemo_menu_bg.jpg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\QLBansach.Context.tt">
+    <Content Include="Models\dbQLBansach.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLBansach.edmx</DependentUpon>
-      <LastGenOutput>QLBansach.Context.cs</LastGenOutput>
+      <DependentUpon>dbQLBansach.edmx</DependentUpon>
+      <LastGenOutput>dbQLBansach.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\QLBansach.tt">
+    <Content Include="Models\dbQLBansach.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLBansach.edmx</DependentUpon>
-      <LastGenOutput>QLBansach.cs</LastGenOutput>
+      <DependentUpon>dbQLBansach.edmx</DependentUpon>
+      <LastGenOutput>dbQLBansach.cs</LastGenOutput>
     </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BookStoreController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CHITIETDONDATHANG.cs">
-      <DependentUpon>QLBansach.tt</DependentUpon>
+      <DependentUpon>dbQLBansach.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CHUDE.cs">
-      <DependentUpon>QLBansach.tt</DependentUpon>
+      <DependentUpon>dbQLBansach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dbQLBansach.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbQLBansach.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dbQLBansach.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbQLBansach.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dbQLBansach.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbQLBansach.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\DONDATHANG.cs">
-      <DependentUpon>QLBansach.tt</DependentUpon>
+      <DependentUpon>dbQLBansach.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Giohang.cs" />
     <Compile Include="Models\KHACHHANG.cs">
-      <DependentUpon>QLBansach.tt</DependentUpon>
+      <DependentUpon>dbQLBansach.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NHAXUATBAN.cs">
-      <DependentUpon>QLBansach.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\QLBansach.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLBansach.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\QLBansach.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLBansach.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\QLBansach.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLBansach.edmx</DependentUpon>
+      <DependentUpon>dbQLBansach.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SACH.cs">
-      <DependentUpon>QLBansach.tt</DependentUpon>
+      <DependentUpon>dbQLBansach.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TACGIA.cs">
-      <DependentUpon>QLBansach.tt</DependentUpon>
+      <DependentUpon>dbQLBansach.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VIETSACH.cs">
-      <DependentUpon>QLBansach.tt</DependentUpon>
+      <DependentUpon>dbQLBansach.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <EntityDeploy Include="Models\QLBansach.edmx">
+    <EntityDeploy Include="Models\dbQLBansach.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLBansach.Designer.cs</LastGenOutput>
+      <LastGenOutput>dbQLBansach.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\QLBansach.edmx.diagram">
-      <DependentUpon>QLBansach.edmx</DependentUpon>
+    <Content Include="Models\dbQLBansach.edmx.diagram">
+      <DependentUpon>dbQLBansach.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <Content Include="Views\Shared\_LayoutHomePage.cshtml" />
@@ -185,6 +195,12 @@
     <Content Include="Views\BookStore\SPTheochude.cshtml" />
     <Content Include="Views\BookStore\SPTheoNXB.cshtml" />
     <Content Include="Views\BookStore\Details.cshtml" />
+    <Content Include="Views\User\Dangky.cshtml" />
+    <Content Include="Views\User\Dangnhap.cshtml" />
+    <Content Include="Views\GioHang\GioHangPartial.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\GioHang\Dathang.cshtml" />
+    <Content Include="Views\GioHang\Xacnhannhandon.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -198,6 +214,7 @@
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>

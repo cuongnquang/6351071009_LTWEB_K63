@@ -55,30 +55,30 @@ img {
 	width: 100px;
 	padding: 4px 0 5px 0;
 	margin-bottom: 10px; 
-	background: url(images/templatemo_btn_02.jpg) no-repeat;
+	background: url(/Content/images/templatemo_btn_02.jpg) no-repeat;
 	color: #FFFFFF;
 	font-weight: bold;
 	text-decoration: none;
 }
 
-.detail_button a{
+.detail_button a {
 	clear: both;
 	text-align: center;
 	display: block;
 	width: 100px;
 	padding: 4px 0 5px 0;
-	margin-bottom: 10px; 
-	background: url(images/templatemo_btn_01.jpg) no-repeat;
+	margin-bottom: 10px;
+	background: url(/Content/images/templatemo_btn_01.jpg) no-repeat;
 	color: #ffffff;
 	font-weight: bold;
 	text-decoration: none;
 }
 
-#templatemo_container{
+#templatemo_container {
 	width: 960px;
 	margin: 0 auto;
 	padding: 0 10px;
-	background: #1c1c1b url(images/templatemo_bg.jpg) repeat-y;
+	background: #1c1c1b url(/Content/images/templatemo_bg.jpg) repeat-y;
 }
 
 
@@ -88,7 +88,7 @@ img {
 	clear: both;
 	width: 960px;
 	height: 45px;
-	background: url(images/templatemo_menu_bg.jpg) no-repeat;
+	background: url(/Content/images/templatemo_menu_bg.jpg) no-repeat;
 }
 
 #templatemo_menu ul {
@@ -124,7 +124,7 @@ img {
 	height: 285px;
 	padding: 0;
 	margin: 0;
-	background: url(images/templatemo_header_bg.jpg) no-repeat;
+	background: url(/Content/images/templatemo_header_bg.jpg) no-repeat;
 }
 
 #templatemo_header a,a:hover {
@@ -244,7 +244,7 @@ img {
 	margin: 0 0 20px 0;
 	font-size: 15px;
 	color: #cbc750;
-	background: url(images/templatemo_h1_bg.jpg);
+	background: url(/Content/images/templatemo_h1_bg.jpg);
 }
 
 #templatemo_content_right h2 {

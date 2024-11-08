@@ -13,10 +13,10 @@ namespace _6351071009_LTWEB_K63.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QLBansach : DbContext
+    public partial class QLBansachEntities : DbContext
     {
-        public QLBansach()
-            : base("name=QLBansach")
+        public QLBansachEntities()
+            : base("name=QLBansachEntities")
         {
         }
     

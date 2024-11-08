@@ -36,7 +36,7 @@
     </div>
 </div>
 <div id="datmua">
-    <a href="@Url.Action("AddToCart","BookStore", new {id = @Model.Masach})">
+    <a href="@Url.Action("ThemGioHang", "GioHang", new { @iMasach = Model.Masach, @strUrl = Request.Url.ToString()})">
         Đặt Mua
     </a>
 </div>

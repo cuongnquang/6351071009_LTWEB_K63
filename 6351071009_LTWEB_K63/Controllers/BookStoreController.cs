@@ -9,8 +9,9 @@ namespace _6351071009_LTWEB_K63.Controllers
 {
     public class BookStoreController : Controller
     {
+
         // GET: BookStore
-        QLBansach data = new QLBansach();
+        QLBansachEntities data = new QLBansachEntities();
 
         public ActionResult Index()
         {
@@ -42,5 +43,6 @@ namespace _6351071009_LTWEB_K63.Controllers
             var sach = from s in data.SACHes where s.Masach == id select s;
             return View(sach.Single());
         }
+        
     }
 }

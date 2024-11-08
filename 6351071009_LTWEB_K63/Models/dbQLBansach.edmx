@@ -398,7 +398,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QLBansach" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="QLBansachEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CHITIETDONDATHANGs" EntityType="Self.CHITIETDONDATHANG" />
           <EntitySet Name="CHUDEs" EntityType="Self.CHUDE" />
           <EntitySet Name="DONDATHANGs" EntityType="Self.DONDATHANG" />
@@ -441,7 +441,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QLBansachModelStoreContainer" CdmEntityContainer="QLBansach">
+        <EntityContainerMapping StorageEntityContainer="QLBansachModelStoreContainer" CdmEntityContainer="QLBansachEntities">
           <EntitySetMapping Name="CHITIETDONDATHANGs">
             <EntityTypeMapping TypeName="QLBansachModel.CHITIETDONDATHANG">
               <MappingFragment StoreEntitySet="CHITIETDONDATHANG">
