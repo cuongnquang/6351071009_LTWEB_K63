@@ -1,28 +1,51 @@
-﻿@model IEnumerable<_6351071009_LTWEB_K63.Models.SACH>
+﻿@using _6351071009_LTWEB_K63.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<SACH>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutHomePage.cshtml";
 }
 
-@foreach (var sach in Model)
-{
-    <div class="templatemo_product_box" style="width:200px; height:500px">
-        <h1 style="overflow:hidden; white-space:nowrap">@sach.Tensach</h1>
-        <div style="width:100%; height:300px">
-            <img src="@sach.Anhbia" style="width:100%; height:100%" alt="image" />
-        </div>
 
-        <div class="product_info">
-            <p></p>
-            <h3>@sach.Giaban</h3>
-            <div class="buy_now_button">
-                <a href="@Url.Action("ThemGioHang", "GioHang", new { @iMasach = sach.Masach, @strUrl = Request.Url.ToString()})">Buy Now</a>
+<h3 style="text-align:center">Sách mới</h3>
+<div class="row">
+    @foreach (var sach in Model)
+    {
+        <div class="templatemo_product_box" style="width:200px; height:500px">
+            <h1 style="overflow:hidden; white-space:nowrap">@sach.Tensach</h1>
+            <div style="width:100%; height:300px">
+                <img src="@sach.Anhbia" style="width:100%; height:100%" alt="image" />
             </div>
-            <div class="detail_button">
-                <a href="@Url.Action("Details", "BookStore", new {id = sach.Masach})">Detail</a>
+
+            <div class="product_info">
+                <p></p>
+                <h3>@sach.Giaban</h3>
+                <div class="buy_now_button">
+                    <a href="@Url.Action("ThemGioHang", "GioHang", new { @iMasach = sach.Masach, @strUrl = Request.Url.ToString()})">Buy Now</a>
+                </div>
+                <div class="detail_button">
+                    <a href="@Url.Action("Details", "BookStore", new {id = sach.Masach})">Detail</a>
+                </div>
             </div>
+            <div class="cleaner">&nbsp;</div>
         </div>
-        <div class="cleaner">&nbsp;</div>
+    }
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <h4>
+            <a href="#">like this templete?</a>
+        </h4>
+        <p>If you like this template, then check out</p>
+        <a href="#" class="btn btn-primary">content</a>
     </div>
-}
+</div>
+Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>
+
 

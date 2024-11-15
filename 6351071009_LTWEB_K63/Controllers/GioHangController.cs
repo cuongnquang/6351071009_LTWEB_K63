@@ -173,7 +173,7 @@ namespace _6351071009_LTWEB_K63.Controllers
             Session["Giohang"] = null;
 
             // Chuyển đến trang xác nhận đơn hàng
-            return RedirectToAction("Xacnhandonhang", "Giohang");
+            return RedirectToAction("Xacnhandonhang", "GioHang");
         }
 
         // Xác nhận đơn hàng

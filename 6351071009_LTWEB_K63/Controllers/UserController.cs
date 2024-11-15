@@ -139,5 +139,10 @@ namespace _6351071009_LTWEB_K63.Controllers
             }
             return View(); // Return to login page if validation fails
         }
+        public ActionResult Logout()
+        {
+            Session["Taikhoan"] = null; // Clear the session
+            return RedirectToAction("Index", "BookStore"); // Redirect to the home page
+        }
     }
 }

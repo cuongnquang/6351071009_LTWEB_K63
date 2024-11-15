@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 using _6351071009_LTWEB_K63.Models;
+using System.Web.UI;
 
 namespace _6351071009_LTWEB_K63.Controllers
 {
@@ -12,11 +15,19 @@ namespace _6351071009_LTWEB_K63.Controllers
 
         // GET: BookStore
         QLBansachEntities data = new QLBansachEntities();
-
-        public ActionResult Index()
+        private List<SACH> Laysachmoi(int count)
         {
-            var book = from bk in data.SACHes select bk;
-            return View(book);
+            return data.SACHes.OrderByDescending(a => a.Ngaycapnhat).Take(count).ToList();
+            //return data.SACHes.OrderByDescending(a => a.Ngaycapnhat).Take(count).ToList();
+        }
+        public ActionResult Index(int ? page)
+        {
+            int pageSize = 5;
+            int pageNum = (page ??  1);
+            var sachmoi = Laysachmoi(15);
+            return View(sachmoi.ToPagedList(pageNum, pageSize));
+            //var book = from bk in data.SACHes select bk;
+            //return View(book);
         }
         public ActionResult ChuDe()
         {
@@ -28,15 +39,19 @@ namespace _6351071009_LTWEB_K63.Controllers
             var nhaxb = from nxb in data.NHAXUATBANs select nxb;
             return PartialView(nhaxb);
         }
-        public ActionResult SPTheochude(int id)
+        public ActionResult SPTheochude(int id, int ? page)
         {
+            int pageSize = 5;
+            int pageNum = (page ?? 1);
             var sach = from s in data.SACHes where s.MaCD == id select s;
-            return View(sach);
+            return View(sach.ToPagedList(pageNum,pageSize));
         }
-        public ActionResult SPTheoNXB(int id)
+        public ActionResult SPTheoNXB(int id, int ? page)
         {
+            int pageSize = 5;
+            int pageNum = (page ?? 1);
             var sach = from s in data.SACHes where s.MaCD == id select s;
-            return View(sach);
+            return View(sach.ToPagedList(pageNum, pageSize));
         }
         public ActionResult Details(int id)
         {
